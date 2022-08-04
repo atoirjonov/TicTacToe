@@ -1,16 +1,24 @@
+import java.util.Scanner;
+
 public class TicTacToe {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         /*
         Create a 2D array named board in order
         to create 3 x 3 board
          */
         char [][] board = {
-                {'X', 'X', 'X'},
-                {'X', 'X', 'X'},
-                {'X', 'X', 'X'}
+                {' ', ' ', ' '},
+                {' ', ' ', ' '},
+                {' ', ' ', ' '}
         };
 
         printBoard(board);
+
+        // Takes the user input
+        System.out.println("What cell would you like to chose?");
+        String userInput = scanner.nextLine();
+        System.out.println(userInput);
     }
 
     private static void printBoard(char[][] board) {
