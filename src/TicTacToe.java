@@ -13,18 +13,14 @@ public class TicTacToe {
                 {' ', ' ', ' '}
         };
 
-
-
-        // Takes the user input
-        System.out.println("What cell would you like to chose?");
-        String userInput = scanner.nextLine();
-
-
-        playerTurn(board, userInput);
+        playerTurn(board, scanner);
         printBoard(board);
     }
 
-    private static void playerTurn(char[][] board, String userInput) {
+    private static void playerTurn(char[][] board, Scanner scanner) {
+        System.out.println("What cell would you like to chose?");
+        String userInput = scanner.nextLine();
+
         switch(userInput) {
             case "1":
                 board[0][0] = 'X';
