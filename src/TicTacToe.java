@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class TicTacToe {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
         /*
         Create a 2D array named board in order
         to create 3 x 3 board
@@ -14,12 +15,17 @@ public class TicTacToe {
                 {' ', ' ', ' '}
         };
 
-        playerTurn(board, scanner);
+        playerMove(board, scanner);
         printBoard(board);
+        while (true) {
 
-        Random rand = new Random();
-        // Get a random number between and 1 and 9
-        int computerPlay = rand.nextInt(9) + 1;
+            // Get a random number between and 1 and 9
+            int computerMove = rand.nextInt(9) + 1;
+            if (isValidMove(board, computerMove)) {
+                break;
+            }
+        }
+
     }
 
 
@@ -29,7 +35,7 @@ public class TicTacToe {
 
 
 
-    private static void playerTurn(char[][] board, Scanner scanner) {
+    private static void playerMove(char[][] board, Scanner scanner) {
         System.out.println("What cell would you like to chose(1-9) ?");
         String userInput = scanner.nextLine();
 
