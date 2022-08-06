@@ -167,6 +167,27 @@ public class TicTacToe {
      * @param board
      */
     private static boolean isGameFinished(char[][] board) {
+
+        // There are 8 possibilities of a user winning
+
+                //First check the first row
+        if(     (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') ||
+                (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X') ||
+                (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X') ||
+
+                //Check the columns
+                (board[0][0] == 'X' && board[1][0] == 'X' && board[2][0] == 'X') ||
+                (board[0][1] == 'X' && board[1][1] == 'X' && board[0][2] == 'X') ||
+                (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') ||
+
+                //Check
+                (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
+                (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X')
+        ) {
+            System.out.println("You win!");
+        }
+
+
         for(int i = 0; i < board.length; i++) {
             for(int j = 0; j < board[i].length; j++) {
                if(board[i][j] == ' ') {
