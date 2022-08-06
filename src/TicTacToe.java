@@ -167,25 +167,16 @@ public class TicTacToe {
      * @param board
      */
     private static boolean isGameFinished(char[][] board) {
+        if(hasContestantWon(board, 'X')) {
+            printBoard(board);
+            System.out.println("You win!");
+            return true;
+        }
 
-        // There are 8 possibilities of a user winning
-
-                //First check the first row
-        if(     (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') ||
-                (board[1][0] == 'X' && board[1][1] == 'X' && board[1][2] == 'X') ||
-                (board[2][0] == 'X' && board[2][1] == 'X' && board[2][2] == 'X') ||
-
-                //Check the columns
-                (board[0][0] == 'X' && board[1][0] == 'X' && board[2][0] == 'X') ||
-                (board[0][1] == 'X' && board[1][1] == 'X' && board[0][2] == 'X') ||
-                (board[0][0] == 'X' && board[0][1] == 'X' && board[0][2] == 'X') ||
-
-                //Check
-                (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
-                (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X') ) {
-                printBoard(board);
-                System.out.println("You win!");
-                return true;
+        if(hasContestantWon(board, 'O')) {
+            printBoard(board);
+            System.out.println("Computer wins!");
+            return true;
         }
 
 
@@ -202,8 +193,23 @@ public class TicTacToe {
         return true;
     }
 
-    private static boolean hasContestantWon(char[][] board) {
 
+    private static boolean hasContestantWon(char[][] board, char symbol) {
+        if(     (board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol) ||
+                (board[1][0] == symbol && board[1][1] == symbol && board[1][2] == symbol) ||
+                (board[2][0] == symbol && board[2][1] == symbol && board[2][2] == symbol) ||
+
+                //Check the columns
+                (board[0][0] == symbol && board[1][0] == symbol && board[2][0] == symbol) ||
+                (board[0][1] == symbol && board[1][1] == symbol && board[0][2] == symbol) ||
+                (board[0][0] == symbol && board[0][1] == symbol && board[0][2] == symbol) ||
+
+                //Check
+                (board[0][0] == symbol && board[1][1] == symbol && board[2][2] == symbol) ||
+                (board[0][2] == symbol && board[1][1] == symbol && board[2][0] == symbol) ) {
+            return true;
+        }
+        return false;
     }
 
 
