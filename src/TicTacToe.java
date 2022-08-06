@@ -38,16 +38,6 @@ public class TicTacToe {
 
     }
 
-    private static boolean isGameOver(char[][] board) {
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] == ' ') {
-                    return false;
-                }
-            }
-        }
-        return true;
-    }
 
     /**
      * Computer generates random number
@@ -174,9 +164,18 @@ public class TicTacToe {
 
     /**
      * Breaks the game is the board is full.
-     * @param baord
+     * @param board
      */
-    private static boolean isGameFinished(char[][] baord) {
+    private static boolean isGameFinished(char[][] board) {
+        for(int i = 0; i < board.length; i++) {
+            for(int j = 0; j < board[i].length; j++) {
+               if(board[i][j] == ' ') {
+                   return false;
+                }
+            }
+        }
+        printBoard(board);
+        System.out.println("It is a tie!");
         return true;
     }
 
