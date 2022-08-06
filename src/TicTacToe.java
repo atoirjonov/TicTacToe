@@ -72,7 +72,7 @@ public class TicTacToe {
             if(isValidMove(board, Integer.parseInt(userInput))) {
                 break;
             } else {
-                System.out.println("You have made a wrong move.");
+                System.out.println(userInput + " is not a valid move.");
             }
         }
         placeMove(board, userInput, 'X');
@@ -200,6 +200,10 @@ public class TicTacToe {
         printBoard(board);
         System.out.println("It is a tie!");
         return true;
+    }
+
+    private static boolean hasContestantWon(char[][] board) {
+
     }
 
 
