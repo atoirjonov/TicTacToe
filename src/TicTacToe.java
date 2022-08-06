@@ -182,10 +182,12 @@ public class TicTacToe {
 
                 //Check
                 (board[0][0] == 'X' && board[1][1] == 'X' && board[2][2] == 'X') ||
-                (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X')
-        ) {
-            System.out.println("You win!");
+                (board[0][2] == 'X' && board[1][1] == 'X' && board[2][0] == 'X') ) {
+                printBoard(board);
+                System.out.println("You win!");
+                return true;
         }
+
 
 
         for(int i = 0; i < board.length; i++) {
